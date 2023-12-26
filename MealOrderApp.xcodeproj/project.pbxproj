@@ -16,6 +16,11 @@
 		3D3DE8D12B39FC26004373BE /* UIview+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DE8D02B39FC26004373BE /* UIview+Extensions.swift */; };
 		3D3DE8D32B39FDF8004373BE /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DE8D22B39FDF8004373BE /* OnboardingSlide.swift */; };
 		3D3DE8D52B3A0115004373BE /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DE8D42B3A0115004373BE /* OnboardingCollectionViewCell.swift */; };
+		3D3DE8D82B3B2BFA004373BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DE8D72B3B2BFA004373BE /* HomeViewController.swift */; };
+		3D3DE8DD2B3B3AA5004373BE /* CatagoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DE8DB2B3B3AA5004373BE /* CatagoryCollectionViewCell.swift */; };
+		3D3DE8DE2B3B3AA5004373BE /* CatagoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3DE8DC2B3B3AA5004373BE /* CatagoryCollectionViewCell.xib */; };
+		3D3DE8E02B3B44AD004373BE /* DishCatagory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DE8DF2B3B44AD004373BE /* DishCatagory.swift */; };
+		D2D729AB1A2C3A7440FF6AC4 /* Pods_MealOrderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,13 @@
 		3D3DE8D02B39FC26004373BE /* UIview+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIview+Extensions.swift"; sourceTree = "<group>"; };
 		3D3DE8D22B39FDF8004373BE /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		3D3DE8D42B3A0115004373BE /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D3DE8D72B3B2BFA004373BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3D3DE8DB2B3B3AA5004373BE /* CatagoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D3DE8DC2B3B3AA5004373BE /* CatagoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatagoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		3D3DE8DF2B3B44AD004373BE /* DishCatagory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCatagory.swift; sourceTree = "<group>"; };
+		9E8C083A19CE3D09ACCF1C04 /* Pods-MealOrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealOrderApp.debug.xcconfig"; path = "Target Support Files/Pods-MealOrderApp/Pods-MealOrderApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F4A1CF742251E7990F3893D8 /* Pods-MealOrderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealOrderApp.release.xcconfig"; path = "Target Support Files/Pods-MealOrderApp/Pods-MealOrderApp.release.xcconfig"; sourceTree = "<group>"; };
+		F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealOrderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D729AB1A2C3A7440FF6AC4 /* Pods_MealOrderApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +61,8 @@
 			children = (
 				3D3DE8B42B39F133004373BE /* MealOrderApp */,
 				3D3DE8B32B39F133004373BE /* Products */,
+				D85B319F2B6700DF2DA10DC3 /* Pods */,
+				90AF6962046C10DA2AE3288A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				3D3DE8D22B39FDF8004373BE /* OnboardingSlide.swift */,
+				3D3DE8DF2B3B44AD004373BE /* DishCatagory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,6 +103,7 @@
 		3D3DE8CA2B39F7E6004373BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D3DE8D62B3B2B2A004373BE /* Home */,
 				3D3DE8CC2B39F824004373BE /* Onbording */,
 			);
 			path = Views;
@@ -95,6 +112,7 @@
 		3D3DE8CB2B39F7EF004373BE /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				3D3DE8D92B3B3A30004373BE /* CollectionViewCells */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -116,6 +134,49 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3D3DE8D62B3B2B2A004373BE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3D3DE8D72B3B2BFA004373BE /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3D3DE8D92B3B3A30004373BE /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				3D3DE8DA2B3B3A4B004373BE /* CatagoryCollectionViewCell */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		3D3DE8DA2B3B3A4B004373BE /* CatagoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D3DE8DB2B3B3AA5004373BE /* CatagoryCollectionViewCell.swift */,
+				3D3DE8DC2B3B3AA5004373BE /* CatagoryCollectionViewCell.xib */,
+			);
+			path = CatagoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		90AF6962046C10DA2AE3288A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D85B319F2B6700DF2DA10DC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E8C083A19CE3D09ACCF1C04 /* Pods-MealOrderApp.debug.xcconfig */,
+				F4A1CF742251E7990F3893D8 /* Pods-MealOrderApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D3DE8C62B39F135004373BE /* Build configuration list for PBXNativeTarget "MealOrderApp" */;
 			buildPhases = (
+				8D597A441C9691BC30C1B879 /* [CP] Check Pods Manifest.lock */,
 				3D3DE8AE2B39F132004373BE /* Sources */,
 				3D3DE8AF2B39F132004373BE /* Frameworks */,
 				3D3DE8B02B39F132004373BE /* Resources */,
@@ -174,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3DE8DE2B3B3AA5004373BE /* CatagoryCollectionViewCell.xib in Resources */,
 				3D3DE8C22B39F135004373BE /* LaunchScreen.storyboard in Resources */,
 				3D3DE8BF2B39F135004373BE /* Assets.xcassets in Resources */,
 				3D3DE8BD2B39F133004373BE /* Main.storyboard in Resources */,
@@ -182,16 +245,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8D597A441C9691BC30C1B879 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealOrderApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D3DE8AE2B39F132004373BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3DE8DD2B3B3AA5004373BE /* CatagoryCollectionViewCell.swift in Sources */,
 				3D3DE8D32B39FDF8004373BE /* OnboardingSlide.swift in Sources */,
 				3D3DE8CE2B39F84A004373BE /* OnboardingViewController.swift in Sources */,
 				3D3DE8B62B39F133004373BE /* AppDelegate.swift in Sources */,
 				3D3DE8D12B39FC26004373BE /* UIview+Extensions.swift in Sources */,
 				3D3DE8B82B39F133004373BE /* SceneDelegate.swift in Sources */,
+				3D3DE8D82B3B2BFA004373BE /* HomeViewController.swift in Sources */,
+				3D3DE8E02B3B44AD004373BE /* DishCatagory.swift in Sources */,
 				3D3DE8D52B3A0115004373BE /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +430,7 @@
 		};
 		3D3DE8C72B39F135004373BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E8C083A19CE3D09ACCF1C04 /* Pods-MealOrderApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -367,6 +459,7 @@
 		};
 		3D3DE8C82B39F135004373BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A1CF742251E7990F3893D8 /* Pods-MealOrderApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
