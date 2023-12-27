@@ -26,6 +26,8 @@
 		3DB00CB72B3C162C00510B67 /* DishPortraitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CB52B3C162C00510B67 /* DishPortraitCollectionViewCell.swift */; };
 		3DB00CB82B3C162C00510B67 /* DishPortraitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB00CB62B3C162C00510B67 /* DishPortraitCollectionViewCell.xib */; };
 		3DB00CBA2B3C190C00510B67 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CB92B3C190C00510B67 /* Dish.swift */; };
+		3DB00CBE2B3C81D100510B67 /* DishLandscapeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CBC2B3C81D100510B67 /* DishLandscapeCollectionViewCell.swift */; };
+		3DB00CBF2B3C81D100510B67 /* DishLandscapeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB00CBD2B3C81D100510B67 /* DishLandscapeCollectionViewCell.xib */; };
 		D2D729AB1A2C3A7440FF6AC4 /* Pods_MealOrderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		3DB00CB52B3C162C00510B67 /* DishPortraitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishPortraitCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DB00CB62B3C162C00510B67 /* DishPortraitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishPortraitCollectionViewCell.xib; sourceTree = "<group>"; };
 		3DB00CB92B3C190C00510B67 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		3DB00CBC2B3C81D100510B67 /* DishLandscapeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishLandscapeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DB00CBD2B3C81D100510B67 /* DishLandscapeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishLandscapeCollectionViewCell.xib; sourceTree = "<group>"; };
 		9E8C083A19CE3D09ACCF1C04 /* Pods-MealOrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealOrderApp.debug.xcconfig"; path = "Target Support Files/Pods-MealOrderApp/Pods-MealOrderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F4A1CF742251E7990F3893D8 /* Pods-MealOrderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealOrderApp.release.xcconfig"; path = "Target Support Files/Pods-MealOrderApp/Pods-MealOrderApp.release.xcconfig"; sourceTree = "<group>"; };
 		F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealOrderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,7 @@
 		3D3DE8D92B3B3A30004373BE /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				3DB00CBB2B3C819100510B67 /* DishLandscapeCollectionCell */,
 				3DB00CB42B3C15DC00510B67 /* DishPortraitCollectionViewCell */,
 				3D3DE8DA2B3B3A4B004373BE /* CatagoryCollectionViewCell */,
 			);
@@ -190,6 +195,15 @@
 				3DB00CB62B3C162C00510B67 /* DishPortraitCollectionViewCell.xib */,
 			);
 			path = DishPortraitCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		3DB00CBB2B3C819100510B67 /* DishLandscapeCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DB00CBC2B3C81D100510B67 /* DishLandscapeCollectionViewCell.swift */,
+				3DB00CBD2B3C81D100510B67 /* DishLandscapeCollectionViewCell.xib */,
+			);
+			path = DishLandscapeCollectionCell;
 			sourceTree = "<group>";
 		};
 		90AF6962046C10DA2AE3288A /* Frameworks */ = {
@@ -278,6 +292,7 @@
 				3D3DE8C22B39F135004373BE /* LaunchScreen.storyboard in Resources */,
 				3DB00CB82B3C162C00510B67 /* DishPortraitCollectionViewCell.xib in Resources */,
 				3D3DE8BF2B39F135004373BE /* Assets.xcassets in Resources */,
+				3DB00CBF2B3C81D100510B67 /* DishLandscapeCollectionViewCell.xib in Resources */,
 				3D3DE8BD2B39F133004373BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +337,7 @@
 				3D3DE8B82B39F133004373BE /* SceneDelegate.swift in Sources */,
 				3D3DE8D82B3B2BFA004373BE /* HomeViewController.swift in Sources */,
 				3D3DE8E02B3B44AD004373BE /* DishCatagory.swift in Sources */,
+				3DB00CBE2B3C81D100510B67 /* DishLandscapeCollectionViewCell.swift in Sources */,
 				3DB00CB02B3C04B100510B67 /* String+Extension.swift in Sources */,
 				3DB00CB32B3C0F5200510B67 /* CardView.swift in Sources */,
 				3D3DE8D52B3A0115004373BE /* OnboardingCollectionViewCell.swift in Sources */,
