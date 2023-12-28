@@ -10,8 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var popularCollectionView: UICollectionView!
-    
     @IBOutlet weak var chefsCollectionView: UICollectionView!
+    
     var categories: [DishCatagory] = [
         .init(id: "id1", name: "Africa Dish", image: "https://picsum.photos/100/200"),
         .init(id: "id2", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
@@ -52,6 +52,10 @@ class HomeViewController: UIViewController {
         
         chefsCollectionView.delegate = self
         chefsCollectionView.dataSource = self
+        
+        
+        
+        
     }
     
     private func registerCells() {
@@ -101,22 +105,28 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let controller = DishDetailViewController.instantiate()
-        
-        switch collectionView {
-        case categoryCollectionView:
-            break
-        case popularCollectionView:
-            controller.dish = populars[indexPath.item]
-            navigationController?.pushViewController(controller, animated: true)
-        case chefsCollectionView:
-            controller.dish = chefs[indexPath.item]
-            navigationController?.pushViewController(controller, animated: true)
-        default:
-            break
+     
+            let controller = DishDetailViewController.instantiate()
+            let listController = DishListesViewController.instantiate()
+
+            switch collectionView {
+            case categoryCollectionView:
+                listController.catagory = categories[indexPath.row]
+                navigationController?.pushViewController(listController, animated: true)
+            case popularCollectionView:
+                controller.dish = populars[indexPath.item]
+                navigationController?.pushViewController(controller, animated: true)
+            case chefsCollectionView:
+                controller.dish = chefs[indexPath.item]
+                navigationController?.pushViewController(controller, animated: true)
+            default:
+                break
+            }
+            
+            
+            
+            
         }
-        
-        
     }
-}
+    
+

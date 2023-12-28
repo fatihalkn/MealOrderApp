@@ -30,6 +30,11 @@
 		3DB00CBF2B3C81D100510B67 /* DishLandscapeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB00CBD2B3C81D100510B67 /* DishLandscapeCollectionViewCell.xib */; };
 		3DB00CC22B3D5DF000510B67 /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CC12B3D5DF000510B67 /* DishDetailViewController.swift */; };
 		3DB00CC42B3D5F9D00510B67 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CC32B3D5F9D00510B67 /* UIViewController+Extension.swift */; };
+		3DB00CC92B3DB99500510B67 /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CC72B3DB99500510B67 /* DishListTableViewCell.swift */; };
+		3DB00CCA2B3DB99500510B67 /* DishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB00CC82B3DB99500510B67 /* DishListTableViewCell.xib */; };
+		3DB00CCD2B3DC00600510B67 /* DishListesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CCC2B3DC00600510B67 /* DishListesViewController.swift */; };
+		3DB00CD02B3DD70A00510B67 /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CCF2B3DD70A00510B67 /* ListOrdersViewController.swift */; };
+		3DB00CD22B3DD9DC00510B67 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CD12B3DD9DC00510B67 /* Order.swift */; };
 		D2D729AB1A2C3A7440FF6AC4 /* Pods_MealOrderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +63,11 @@
 		3DB00CBD2B3C81D100510B67 /* DishLandscapeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishLandscapeCollectionViewCell.xib; sourceTree = "<group>"; };
 		3DB00CC12B3D5DF000510B67 /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
 		3DB00CC32B3D5F9D00510B67 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3DB00CC72B3DB99500510B67 /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
+		3DB00CC82B3DB99500510B67 /* DishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListTableViewCell.xib; sourceTree = "<group>"; };
+		3DB00CCC2B3DC00600510B67 /* DishListesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListesViewController.swift; sourceTree = "<group>"; };
+		3DB00CCF2B3DD70A00510B67 /* ListOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
+		3DB00CD12B3DD9DC00510B67 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		9E8C083A19CE3D09ACCF1C04 /* Pods-MealOrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealOrderApp.debug.xcconfig"; path = "Target Support Files/Pods-MealOrderApp/Pods-MealOrderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F4A1CF742251E7990F3893D8 /* Pods-MealOrderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealOrderApp.release.xcconfig"; path = "Target Support Files/Pods-MealOrderApp/Pods-MealOrderApp.release.xcconfig"; sourceTree = "<group>"; };
 		F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealOrderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +127,7 @@
 				3D3DE8D22B39FDF8004373BE /* OnboardingSlide.swift */,
 				3D3DE8DF2B3B44AD004373BE /* DishCatagory.swift */,
 				3DB00CB92B3C190C00510B67 /* Dish.swift */,
+				3DB00CD12B3DD9DC00510B67 /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +135,8 @@
 		3D3DE8CA2B39F7E6004373BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DB00CCE2B3DD6C200510B67 /* ListOrders */,
+				3DB00CCB2B3DBFDD00510B67 /* DishListes */,
 				3DB00CC02B3D5DB600510B67 /* DishDetail */,
 				3D3DE8D62B3B2B2A004373BE /* Home */,
 				3D3DE8CC2B39F824004373BE /* Onbording */,
@@ -134,6 +147,8 @@
 		3D3DE8CB2B39F7EF004373BE /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				3DB00CC62B3DB96200510B67 /* DishListTableViewCell */,
+				3DB00CC52B3DB94200510B67 /* TableViewCell */,
 				3DB00CB12B3C0F3D00510B67 /* CardView */,
 				3D3DE8D92B3B3A30004373BE /* CollectionViewCells */,
 			);
@@ -220,6 +235,38 @@
 			path = DishDetail;
 			sourceTree = "<group>";
 		};
+		3DB00CC52B3DB94200510B67 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		3DB00CC62B3DB96200510B67 /* DishListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DB00CC72B3DB99500510B67 /* DishListTableViewCell.swift */,
+				3DB00CC82B3DB99500510B67 /* DishListTableViewCell.xib */,
+			);
+			path = DishListTableViewCell;
+			sourceTree = "<group>";
+		};
+		3DB00CCB2B3DBFDD00510B67 /* DishListes */ = {
+			isa = PBXGroup;
+			children = (
+				3DB00CCC2B3DC00600510B67 /* DishListesViewController.swift */,
+			);
+			path = DishListes;
+			sourceTree = "<group>";
+		};
+		3DB00CCE2B3DD6C200510B67 /* ListOrders */ = {
+			isa = PBXGroup;
+			children = (
+				3DB00CCF2B3DD70A00510B67 /* ListOrdersViewController.swift */,
+			);
+			path = ListOrders;
+			sourceTree = "<group>";
+		};
 		90AF6962046C10DA2AE3288A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3DE8DE2B3B3AA5004373BE /* CatagoryCollectionViewCell.xib in Resources */,
+				3DB00CCA2B3DB99500510B67 /* DishListTableViewCell.xib in Resources */,
 				3D3DE8C22B39F135004373BE /* LaunchScreen.storyboard in Resources */,
 				3DB00CB82B3C162C00510B67 /* DishPortraitCollectionViewCell.xib in Resources */,
 				3D3DE8BF2B39F135004373BE /* Assets.xcassets in Resources */,
@@ -343,6 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB00CCD2B3DC00600510B67 /* DishListesViewController.swift in Sources */,
+				3DB00CD02B3DD70A00510B67 /* ListOrdersViewController.swift in Sources */,
+				3DB00CD22B3DD9DC00510B67 /* Order.swift in Sources */,
+				3DB00CC92B3DB99500510B67 /* DishListTableViewCell.swift in Sources */,
 				3DB00CC42B3D5F9D00510B67 /* UIViewController+Extension.swift in Sources */,
 				3D3DE8DD2B3B3AA5004373BE /* CatagoryCollectionViewCell.swift in Sources */,
 				3D3DE8D32B39FDF8004373BE /* OnboardingSlide.swift in Sources */,
