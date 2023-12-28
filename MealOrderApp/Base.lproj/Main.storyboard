@@ -343,19 +343,19 @@
             </objects>
             <point key="canvasLocation" x="2061.8320610687024" y="-35.211267605633807"/>
         </scene>
-        <!--View Controller-->
+        <!--Dish Detail View Controller-->
         <scene sceneID="x3H-i8-qn4">
             <objects>
-                <viewController id="NnB-Qw-4z3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DishDetailViewController" id="NnB-Qw-4z3" customClass="DishDetailViewController" customModule="MealOrderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yFN-GI-siR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oa5-pt-A0m">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="589.66666666666663"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oa5-pt-A0m">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="574"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BBC-QF-NNG">
-                                <rect key="frame" x="16" y="605.66666666666663" width="361" height="196.33333333333337"/>
+                                <rect key="frame" x="16" y="590" width="361" height="212"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfa-hn-3bg">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
@@ -399,11 +399,22 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s01-8H-kcd">
-                                        <rect key="frame" x="0.0" y="162" width="361" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="162" width="361" height="50"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Alj-wv-ZZj"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Place Order"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="placeOrderBtnCliced:" destination="NnB-Qw-4z3" eventType="touchUpInside" id="EiK-0y-Kan"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -420,6 +431,13 @@
                             <constraint firstItem="un7-hE-1vh" firstAttribute="trailing" secondItem="BBC-QF-NNG" secondAttribute="trailing" constant="16" id="sjw-8d-cYg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="caloriesLbl" destination="eCp-9b-I4b" id="SJy-Zt-fq9"/>
+                        <outlet property="descriptinLbl" destination="P0A-KX-1pu" id="dDt-EF-a85"/>
+                        <outlet property="dishImageView" destination="Oa5-pt-A0m" id="D3K-ks-Duc"/>
+                        <outlet property="nameField" destination="uQL-YG-PXJ" id="xag-e4-P43"/>
+                        <outlet property="titleLbl" destination="duk-MR-XDk" id="zHu-W3-I2i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BO-xr-7OV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
