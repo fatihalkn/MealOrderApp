@@ -24,6 +24,7 @@ class DishLandscapeCollectionViewCell:
         caloriesLbl.text = dish.formattedCalories
         
     
+       
     }
 
 }

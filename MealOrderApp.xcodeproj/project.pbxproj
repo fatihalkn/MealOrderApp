@@ -35,6 +35,10 @@
 		3DB00CCD2B3DC00600510B67 /* DishListesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CCC2B3DC00600510B67 /* DishListesViewController.swift */; };
 		3DB00CD02B3DD70A00510B67 /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CCF2B3DD70A00510B67 /* ListOrdersViewController.swift */; };
 		3DB00CD22B3DD9DC00510B67 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CD12B3DD9DC00510B67 /* Order.swift */; };
+		3DB00CD52B3F205200510B67 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CD42B3F205200510B67 /* NetworkService.swift */; };
+		3DB00CD72B3F215700510B67 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CD62B3F215700510B67 /* Route.swift */; };
+		3DB00CD92B3F29B900510B67 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CD82B3F29B900510B67 /* Method.swift */; };
+		3DB00CDB2B3F3C5900510B67 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB00CDA2B3F3C5900510B67 /* AppError.swift */; };
 		D2D729AB1A2C3A7440FF6AC4 /* Pods_MealOrderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,10 @@
 		3DB00CCC2B3DC00600510B67 /* DishListesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListesViewController.swift; sourceTree = "<group>"; };
 		3DB00CCF2B3DD70A00510B67 /* ListOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
 		3DB00CD12B3DD9DC00510B67 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		3DB00CD42B3F205200510B67 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3DB00CD62B3F215700510B67 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		3DB00CD82B3F29B900510B67 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		3DB00CDA2B3F3C5900510B67 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		9E8C083A19CE3D09ACCF1C04 /* Pods-MealOrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealOrderApp.debug.xcconfig"; path = "Target Support Files/Pods-MealOrderApp/Pods-MealOrderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F4A1CF742251E7990F3893D8 /* Pods-MealOrderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealOrderApp.release.xcconfig"; path = "Target Support Files/Pods-MealOrderApp/Pods-MealOrderApp.release.xcconfig"; sourceTree = "<group>"; };
 		F62CB2C3FC0A4C89E00BCEFB /* Pods_MealOrderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealOrderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +115,7 @@
 		3D3DE8B42B39F133004373BE /* MealOrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				3DB00CD32B3F202D00510B67 /* Networking */,
 				3D3DE8CF2B39FBFA004373BE /* Extensions */,
 				3D3DE8CB2B39F7EF004373BE /* CustomViews */,
 				3D3DE8CA2B39F7E6004373BE /* Views */,
@@ -267,6 +276,17 @@
 			path = ListOrders;
 			sourceTree = "<group>";
 		};
+		3DB00CD32B3F202D00510B67 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3DB00CD42B3F205200510B67 /* NetworkService.swift */,
+				3DB00CD62B3F215700510B67 /* Route.swift */,
+				3DB00CD82B3F29B900510B67 /* Method.swift */,
+				3DB00CDA2B3F3C5900510B67 /* AppError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		90AF6962046C10DA2AE3288A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,15 +419,19 @@
 				3D3DE8DD2B3B3AA5004373BE /* CatagoryCollectionViewCell.swift in Sources */,
 				3D3DE8D32B39FDF8004373BE /* OnboardingSlide.swift in Sources */,
 				3D3DE8CE2B39F84A004373BE /* OnboardingViewController.swift in Sources */,
+				3DB00CD92B3F29B900510B67 /* Method.swift in Sources */,
 				3D3DE8B62B39F133004373BE /* AppDelegate.swift in Sources */,
 				3D3DE8D12B39FC26004373BE /* UIview+Extensions.swift in Sources */,
 				3D3DE8B82B39F133004373BE /* SceneDelegate.swift in Sources */,
 				3DB00CC22B3D5DF000510B67 /* DishDetailViewController.swift in Sources */,
 				3D3DE8D82B3B2BFA004373BE /* HomeViewController.swift in Sources */,
+				3DB00CD72B3F215700510B67 /* Route.swift in Sources */,
+				3DB00CD52B3F205200510B67 /* NetworkService.swift in Sources */,
 				3D3DE8E02B3B44AD004373BE /* DishCatagory.swift in Sources */,
 				3DB00CBE2B3C81D100510B67 /* DishLandscapeCollectionViewCell.swift in Sources */,
 				3DB00CB02B3C04B100510B67 /* String+Extension.swift in Sources */,
 				3DB00CB32B3C0F5200510B67 /* CardView.swift in Sources */,
+				3DB00CDB2B3F3C5900510B67 /* AppError.swift in Sources */,
 				3D3DE8D52B3A0115004373BE /* OnboardingCollectionViewCell.swift in Sources */,
 				3DB00CBA2B3C190C00510B67 /* Dish.swift in Sources */,
 				3DB00CB72B3C162C00510B67 /* DishPortraitCollectionViewCell.swift in Sources */,

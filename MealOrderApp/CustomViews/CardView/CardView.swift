@@ -18,6 +18,7 @@ class CardView: UIView {
         initialStup()
         
     }
+    
     private func initialStup() {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = .zero
