@@ -10,17 +10,22 @@ import Foundation
 struct NetworkService {
     static let shered = NetworkService()
     private init() {}
-    func myFirstRequest() {
-        request(route: .temp, method: .get, type: String.self, completion: { _ in })
+    
+    func fetchAllCategories(complation: @escaping(Result<AllDishes, Error>) -> Void) {
+        request(route: .fetchAllCategories, method: .get, completion: complation)
+    }
+    
+    func placeOrder(dishId: String, name: String, comlation: @escaping(Result<Order, Error>) -> Void) {
+        let params = ["name": name]
+        request(route: .placeOrder(dishId), method: .post, parameters: params, completion: comlation)
+        
     }
     
     
-    
-    private func request<T: Codable>(route: Route,
+    private func request<T: Decodable>(route: Route,
                                      method: Method,
                                      parameters:[String: Any]? = nil,
-                                     type: T.Type,
-                                     completion: (Result<T,Error>)-> Void) {
+                                     completion: @escaping(Result<T,Error>)-> Void) {
         
         guard   let request = createRequest(route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknowError))
@@ -32,19 +37,55 @@ struct NetworkService {
             if let data = data {
                 result = .success(data)
                 let responseString = String(data: data, encoding: .utf8) ?? "Cold not Stringify our data "
-                print("The response is: \(responseString)")
+                //print("The response is:/n/ \(responseString)")
             } else if  let error = error {
                 result = .failure(error)
-                print("The error is: \(error.localizedDescription)")
+                //print("The error is: \(error.localizedDescription)")
                 
             }
             
             DispatchQueue.main.async {
-                ////
+                self.handleRespone(result: result, completion: completion)
             }
              
         }.resume()
         
+    }
+     
+        
+        private func handleRespone<T: Decodable>(result: Result<Data,Error>?,
+                                                 completion: (Result<T,Error>)-> Void) {
+             
+             guard let result = result else {
+                 completion(.failure(AppError.unknowError))
+                 return
+             }
+             switch result {
+                 
+             case .success(let data):
+                 let decoder = JSONDecoder()
+                 guard let response = try? decoder.decode(ApiResponse<T>.self, from: data) else {
+                     completion(.failure(AppError.errorDecoding))
+                return
+                 }
+                 if let error = response.error {
+                     completion(.failure(AppError.serverError(error)))
+                     return
+                 }
+                 
+                 if let decodedData = response.data {
+                     completion(.success(decodedData))
+                 } else {
+                     completion(.failure(AppError.unknowError))
+                 }
+                 
+                 
+                 
+             case .failure(let error):
+                 completion(.failure(error))
+             }
+            
+        }
     }
     
     
@@ -72,4 +113,3 @@ struct NetworkService {
         }
         return urlRequest
     }
-}

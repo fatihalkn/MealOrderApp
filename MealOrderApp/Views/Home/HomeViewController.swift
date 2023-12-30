@@ -6,45 +6,25 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var chefsCollectionView: UICollectionView!
     
-    var categories: [DishCatagory] = [
-        .init(id: "id1", name: "Africa Dish", image: "https://picsum.photos/100/200"),
-        .init(id: "id2", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
-        .init(id: "id3", name: "Africa Dish 3", image: "https://picsum.photos/100/200"),
-        .init(id: "id4", name: "Africa Dish 4", image: "https://picsum.photos/100/200"),
-        .init(id: "id5", name: "Africa Dish 5", image: "https://picsum.photos/100/200")
-    ]
+    var categories: [DishCatagory] = []
     
-    var populars: [Dish] = [
-        .init(id: "id1", name: "Garri", description: "This the best I have ever tastedThis the best I have ever tastedThis the best I have ever tastedThis the best I have ever tastedThis the best I have ever tastedThis the best I have ever tastedThis the best I have ever tastedThis the best I have ever tastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtastedtasted", image: "https://picsum.photos/100/200", calories: 32),
-        .init(id: "id2", name: "Garri 2", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 30),
-        .init(id: "id3", name: "Garri 3", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 31),
-        .init(id: "id4", name: "Garri 4", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 88),
-        .init(id: "id5", name: "Garri 5", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 1002)
-        
-    ]
+    var populars: [Dish] = []
     
-    var chefs: [Dish] = [
-        .init(id: "id1", name: "Pizza", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 32),
-        .init(id: "id2", name: "Manto", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 30),
-        .init(id: "id3", name: "Börek", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 31),
-        .init(id: "id4", name: "Lazanya", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 88),
-        .init(id: "id5", name: "Dolma", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 1002)
-        
-        
-    ]
+    var chefs: [Dish] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkService.shered.myFirstRequest()
+       
         
-        registerCells()
+        
         
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
@@ -55,7 +35,25 @@ class HomeViewController: UIViewController {
         chefsCollectionView.delegate = self
         chefsCollectionView.dataSource = self
         
+        registerCells()
         
+        ProgressHUD.animate()
+        NetworkService.shered.fetchAllCategories { [weak self] (result) in
+            switch result {
+                
+            case .success(let allDishes):
+                ProgressHUD.dismiss()
+                self?.categories = allDishes.categories ?? []
+                self?.populars = allDishes.populars ?? []
+                self?.chefs = allDishes.specials ?? []
+                print("\(allDishes.specials ?? [])")
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.chefsCollectionView.reloadData()
+            case .failure(let error):
+                ProgressHUD.error(error.localizedDescription)
+            }
+        }
         
         
     }
