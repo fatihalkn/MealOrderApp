@@ -13,10 +13,7 @@ struct Dish: Decodable {
     let description: String?
     let image: String?
     let calories: Int?
-    
-    
-    
-    
+ 
     var formattedCalories: String {
         return "\(calories ?? 0) calories"
         
