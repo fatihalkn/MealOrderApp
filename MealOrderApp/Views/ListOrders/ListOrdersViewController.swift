@@ -6,24 +6,34 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class ListOrdersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var oreders: [Order] = [
-        .init(id: "id", name: "Fatih Alkan", dish: .init(id: "id3", name: "Börek", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 31)),
-        .init(id: "id", name: "Hülya Alkan", dish: .init(id: "id3", name: "Sarma", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 31)),
-        .init(id: "id", name: "Fatih Alkan", dish: .init(id: "id3", name: "Mantı", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 31)),
-        .init(id: "id", name: "Ekrem Alkan", dish: .init(id: "id3", name: "Pizza", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 31)),
-        .init(id: "id", name: "Yusuf Alkan", dish: .init(id: "id3", name: "Elma", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 31))
-
-    ]
+    var orders: [Order] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
             
         title = "Orders"
        registerCells()
+    
+        ProgressHUD.animate()
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NetworkService.shered.fetchOrders { [weak self] (result) in
+            switch result {
+            case .success(let orders):
+                ProgressHUD.dismiss()
+                self?.orders = orders
+                self?.tableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.error(error.localizedDescription)
+            }
+        }
     }
     
     private func registerCells() {
@@ -37,17 +47,17 @@ class ListOrdersViewController: UIViewController {
 
 extension ListOrdersViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return oreders.count
+        return orders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DishListTableViewCell.identifier, for: indexPath) as! DishListTableViewCell
-        cell.setup(order: oreders[indexPath.row])
+        cell.setup(order: orders[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = DishDetailViewController.instantiate()
-        controller.dish = oreders[indexPath.row].dish
+        controller.dish = orders[indexPath.row].dish
         navigationController?.pushViewController(controller, animated: true)
     }
     

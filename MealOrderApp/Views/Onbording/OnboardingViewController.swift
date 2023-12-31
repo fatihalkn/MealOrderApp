@@ -47,6 +47,7 @@ class OnbordingViewController: UIViewController {
             let controller = storyboard?.instantiateViewController(identifier: "HomeNC") as! UINavigationController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
+            UserDefaults.standard.hasOnboarded = true
             present(controller, animated: true, completion: nil)
         } else {
             currentPage += 1 // currentPage değişkenini bir artır. Bu, bir sonraki öğeye geçmek için kullanılır.

@@ -26,6 +26,11 @@ struct NetworkService {
         
     }
     
+    func fetchOrders(complation: @escaping(Result<[Order], Error>) -> Void) {
+        request(route: .fetchOrders, method: .get, completion: complation)
+        
+    }
+    
     private func request<T: Decodable>(route: Route,
                                      method: Method,
                                      parameters:[String: Any]? = nil,

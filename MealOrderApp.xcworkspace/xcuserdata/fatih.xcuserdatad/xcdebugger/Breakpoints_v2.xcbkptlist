@@ -14,8 +14,8 @@
             filePath = "MealOrderApp/Networking/NetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "handleRespone(result:completion:)"
             landmarkType = "7">
             <Locations>
@@ -47,6 +47,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
                   endingLineNumber = "91"
+                  offsetFromSymbolStart = "2300">
+               </Location>
+               <Location
+                  uuid = "1676300F-BE89-4B34-A6C2-1995AC6B051A - 98d32bc6462a1691"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MealOrderApp.NetworkService.handleRespone&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(result: Swift.Optional&lt;Swift.Result&lt;Foundation.Data, Swift.Error&gt;&gt;, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MealOrderApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/MealOrderApp/MealOrderApp/Networking/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
                   offsetFromSymbolStart = "2300">
                </Location>
             </Locations>
