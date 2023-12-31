@@ -46,7 +46,6 @@ class HomeViewController: UIViewController {
                 self?.categories = allDishes.categories ?? []
                 self?.populars = allDishes.populars ?? []
                 self?.chefs = allDishes.specials ?? []
-                print("\(allDishes.specials ?? [])")
                 self?.categoryCollectionView.reloadData()
                 self?.popularCollectionView.reloadData()
                 self?.chefsCollectionView.reloadData()
@@ -129,4 +128,3 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
-

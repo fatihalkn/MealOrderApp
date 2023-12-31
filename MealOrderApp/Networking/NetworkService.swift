@@ -21,6 +21,10 @@ struct NetworkService {
         
     }
     
+    func fetchCategoryDishes(catagoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
+        request(route: .fetchCategoryDishes(catagoryId), method: .get, completion: completion)
+        
+    }
     
     private func request<T: Decodable>(route: Route,
                                      method: Method,
@@ -32,8 +36,9 @@ struct NetworkService {
             return
         }
         
-        URLSession.shared.dataTask(with: request) {data, response, error in
+        URLSession.shared.dataTask(with: request) { data, response, error in
             var result: Result<Data,Error>?
+            
             if let data = data {
                 result = .success(data)
                 let responseString = String(data: data, encoding: .utf8) ?? "Cold not Stringify our data "
@@ -55,6 +60,7 @@ struct NetworkService {
         
         private func handleRespone<T: Decodable>(result: Result<Data,Error>?,
                                                  completion: (Result<T,Error>)-> Void) {
+            
              
              guard let result = result else {
                  completion(.failure(AppError.unknowError))

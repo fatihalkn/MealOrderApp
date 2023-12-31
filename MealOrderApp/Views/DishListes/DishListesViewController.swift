@@ -6,20 +6,13 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class DishListesViewController: UIViewController {
     
     
     
-    var dishes: [Dish] = [
-        .init(id: "id1", name: "Garri", description:  "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 32),
-        .init(id: "id2", name: "Garri 2", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 30),
-        .init(id: "id3", name: "Garri 3", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 31),
-        .init(id: "id4", name: "Garri 4", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 88),
-        .init(id: "id5", name: "Garri 5", description: "This the best I have ever tasted", image: "https://picsum.photos/100/200", calories: 1002)
-       
-        
-    ]
+    var dishes: [Dish] = []
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,6 +27,18 @@ class DishListesViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        ProgressHUD.animate()
+        NetworkService.shered.fetchCategoryDishes(catagoryId: catagory.id ?? "") { [weak self] (result) in
+            switch result {
+            case .success(let dishes):
+                ProgressHUD.dismiss()
+                self?.dishes = dishes
+                self?.tableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.error(error.localizedDescription)
+            }
+        }
     }
     private func registerCells() {
         tableView.register(UINib(nibName: DishListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DishListTableViewCell.identifier)
